@@ -14,11 +14,7 @@ services:
     #
     # 设置最终运行出来的 docker 容器的名字
     #
-    container_name: sophon-bsp-container
-    #
-    # 开启容器特权模式；容器获得几乎宿主机 root 权限
-    #
-    # privileged: true
+    container_name: sophon-bsp-build
     #
     # 分配虚拟终端（TTY），等价于 `docker run -t`
     #
@@ -43,6 +39,11 @@ services:
     # 挂载数据卷
     #
     volumes:
+      - type: bind
+        source: ./volumes/env
+        target: /env
+        bind:
+          create_host_path: false
       - type: bind
         source: ./volumes/workspace
         target: /workspace
