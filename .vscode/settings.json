@@ -1,6 +1,4 @@
 {
-  "http.proxy": "http://127.0.0.1:7897",
-  "http.noProxy": "localhost,127.0.0.1",
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontSize": 13
 }
