@@ -2,3 +2,9 @@
 # 忽略：.env 文件
 #
 .env
+
+#
+# 忽略：volumes/workspace 文件夹
+#
+volumes/workspace
+!volumes/workspace/.gitkeep
