@@ -31,9 +31,6 @@ RUN python3 -m pip install --upgrade pip setuptools setuptools_rust dfss -i http
 # 4. 安装 bsp 依赖
 #
 RUN mkdir /env && pushd /env/ \
-&& git clone https://github.com/sophgo/bootloader-arm64.git \
-&& git clone https://github.com/sophgo/linux-arm64.git \
-&& git clone https://github.com/sophgo/libsophon.git \
 && python3 -m dfss --url=open@sophgo.com:/sophon-bsp/BSP_SDK.zip \
 && 7z x BSP_SDK.zip \
 && mv 'BSP SDK'/* ./ \
