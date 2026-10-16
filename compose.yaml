@@ -1,0 +1,42 @@
+#
+# Docker Compose 配置
+#
+services:
+  sophon-bsp-build:
+    #
+    # 使用当前目录下的 Dockerfile 构建 docker 镜像
+    #
+    build: .
+    #
+    # 指定镜像名称 + 标签 `镜像名:版本tag`
+    #
+    image: sophon-bsp-build:v1
+    #
+    # 设置最终运行出来的 docker 容器的名字
+    #
+    container_name: sophon-bsp-container
+    #
+    # 开启容器特权模式；容器获得几乎宿主机 root 权限
+    #
+    privileged: true
+    #
+    # 分配虚拟终端（TTY），等价于 `docker run -t`
+    #
+    tty: true
+    #
+    # 保持标准输入 stdin 打开，等价于 `docker run -i`
+    #
+    stdin_open: true
+    #
+    # 挂载数据卷，格式：`宿主机路径:容器内路径`
+    #
+    volumes:
+      - /workspace:/workspace:z
+    #
+    # 容器启动后执行的默认程序，等价 docker run 末尾的 `/bin/bash`
+    #
+    command: /bin/bash
+    #
+    # 容器重启策略：`no`，容器退出永远不会自动重启
+    #
+    restart: "no"
