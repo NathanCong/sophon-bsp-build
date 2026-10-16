@@ -34,19 +34,3 @@ RUN python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/si
 # set work dir
 #
 WORKDIR /workspace
-
-#
-# add path
-#
-ENV PATH "$PATH:/env/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin"
-
-#
-# Set the locale
-#
-RUN locale-gen en_US.UTF-8
-
-ENV LANG en_US.UTF-8
-
-ENV LANGUAGE en_US:en
-
-ENV LC_ALL en_US.UTF-8

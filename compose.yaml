@@ -28,6 +28,18 @@ services:
     #
     stdin_open: true
     #
+    # 限制 CPU 最多使用 4 核
+    #
+    cpus: 4
+    #
+    # 限制内存最多使用 32G
+    #
+    mem_limit: 32g
+    #
+    # 限制内存+swap最多使用 32G
+    #
+    memswap_limit: 32g
+    #
     # 挂载数据卷，格式：`宿主机路径:容器内路径`
     #
     volumes:
