@@ -25,7 +25,7 @@ vim nano python3-dev python3-pip gdb g++ build-essential p7zip-full bsdmainutils
 #
 # 3. 安装 python 依赖
 #
-RUN RUN python3 -m pip install --upgrade pip setuptools setuptools_rust dfss -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN python3 -m pip install --upgrade pip setuptools setuptools_rust dfss -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 #
 # 4. 安装 bsp 依赖
