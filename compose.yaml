@@ -43,7 +43,7 @@ services:
     # 挂载数据卷，格式：`宿主机路径:容器内路径`
     #
     volumes:
-      - /volumes/workspace:/workspace:z
+      - ./volumes/workspace:/workspace:z
     #
     # 容器启动后执行的默认程序，等价 docker run 末尾的 `/bin/bash`
     #
