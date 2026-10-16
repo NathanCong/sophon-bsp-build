@@ -18,7 +18,7 @@ services:
     #
     # 开启容器特权模式；容器获得几乎宿主机 root 权限
     #
-    privileged: true
+    # privileged: true
     #
     # 分配虚拟终端（TTY），等价于 `docker run -t`
     #
@@ -36,9 +36,9 @@ services:
     #
     mem_limit: 32g
     #
-    # 限制内存+swap最多使用 32G
+    # 限制内存+swap最多使用 32G + 16G
     #
-    memswap_limit: 32g
+    memswap_limit: 48g
     #
     # 挂载数据卷
     #
