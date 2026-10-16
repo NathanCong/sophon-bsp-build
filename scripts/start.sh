@@ -11,6 +11,17 @@ set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
 
 #
+# 创建 .env 文件
+#
+cat > .env <<EOF
+#
+# 此处添加环境变量
+#
+# eg: AVATAR_ID=${AVATAR_ID}
+#
+EOF
+
+#
 # 启动服务
 #
 COMPOSE=(docker compose -f compose.yaml --env-file .env)
