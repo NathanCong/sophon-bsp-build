@@ -14,11 +14,6 @@ cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
 # 创建 .env 文件
 #
 cat > .env <<EOF
-#
-# 此处添加环境变量
-#
-# eg: AVATAR_ID=${AVATAR_ID}
-#
 EOF
 
 #
