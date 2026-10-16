@@ -5,6 +5,8 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+SHELL ["/bin/bash", "-c"]
+
 #
 # 2. 换国内源 + 安装编译依赖
 #
@@ -23,10 +25,7 @@ vim nano python3-dev python3-pip gdb g++ build-essential p7zip-full bsdmainutils
 #
 # 3. 安装 python 依赖
 #
-RUN python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple \
-&& python3 -m pip install setuptools --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple \
-&& python3 -m pip install setuptools_rust --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple \
-&& python3 -m pip install dfss --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN RUN python3 -m pip install --upgrade pip setuptools setuptools_rust dfss -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 #
 # 4. 安装 bsp 依赖
