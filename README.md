@@ -84,7 +84,22 @@ mkdir qt_ms9132 && pushd qt_ms9132 \
 && popd
 
 #
-# 5. 添加环境变量并验证（逐条执行）
+# 5. 下载 bootloader-arm64 仓库（可外部下载，然后复制进容器）
+#
+git clone https://github.com/sophgo/bootloader-arm64.git
+
+#
+# 6. 下载 linux-kernel 源码仓库（可外部下载，然后复制进容器）
+#
+git clone https://github.com/sophgo/linux-arm64.git
+
+#
+# 7. 下载 libsophon 源码仓库（可外部下载，然后复制进容器）
+#
+git clone https://github.com/sophgo/libsophon.git
+
+#
+# 8. 添加环境变量并验证（逐条执行）
 #
 ls /env/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin
 export PATH="$PATH:/env/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin"
@@ -96,24 +111,9 @@ export LC_ALL=en_US.UTF-8
 locale
 
 #
-# 6. 下载 bootloader-arm64 仓库（可外部下载，然后复制进容器）
+# 9. 加载编译脚本并执行
 #
-git clone https://github.com/sophgo/bootloader-arm64.git
-
-#
-# 7. 下载 linux-kernel 源码仓库（可外部下载，然后复制进容器）
-#
-git clone https://github.com/sophgo/linux-arm64.git
-
-#
-# 8. 下载 libsophon 源码仓库（可外部下载，然后复制进容器）
-#
-git clone https://github.com/sophgo/libsophon.git
-
-#
-# 9. 加载编译脚本
-#
-cd /env/bootloader-arm64
-source scripts/envsetup.sh
+cd /env
+source /env/bootloader-arm64/scripts/envsetup.sh
 build_bsp_without_package
 ```
