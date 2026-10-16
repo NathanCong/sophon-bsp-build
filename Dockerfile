@@ -36,29 +36,6 @@ RUN python3 -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/si
 WORKDIR /workspace
 
 #
-# download build files
-#
-RUN mkdir /env && pushd /env/ \
-&& python3 -m dfss --url=open@sophgo.com:/sophon-bsp/BSP_SDK.zip \
-&& 7z x BSP_SDK.zip \
-&& mv 'BSP SDK'/* ./ \
-&& rm -rf 'BSP SDK' \
-&& rm -rf BSP_SDK.zip \
-&& rm -rf memory_layout_modification_tool \
-&& tar -xaf gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.tar.xz \
-&& mkdir qt_fl2000 && pushd qt_fl2000 \
-&& python3 -m dfss --dflag=sophgo-bsp-qt5-fl2000fb-toolchain \
-&& tar -xaf qt-5.14-amd64-aarch64-fl2000fb_v1.1.0.tar.xz \
-&& popd \
-&& mkdir qt_ms9132 && pushd qt_ms9132 \
-&& python3 -m dfss --dflag=sophgo-bsp-qt5-ms9132-toolchain \
-&& tar -xaf qt-5.14-amd64-aarch64-ms9132_v1.1.0.tar.xz \
-&& popd \
-&& popd
-
-RUN ulimit -n 1024
-
-#
 # add path
 #
 ENV PATH "$PATH:/env/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu/bin"
