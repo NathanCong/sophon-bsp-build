@@ -7,4 +7,4 @@
 # 忽略：volumes 文件夹（仅保留 .gitkeep）
 #
 !volumes/**/.gitkeep
-volumes/**
+volumes
